@@ -1,0 +1,219 @@
+/* Import your font URL if needed */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; /* Correct font family name */
+  }
+  
+  :root {
+    --text-clr: #4a5c6c;
+    --bg-clr: #f2f4fc;
+    --border-clr: rgb(156, 176, 193);
+  }
+  
+  html {
+    font-size: 62.5%; /* Use a 10x scale (62.5% = 10px base font size) for easier rem calculations */
+  }
+  
+  body {
+    background-color: var(--bg-clr);
+  }
+  
+  h2 {
+    font-family: "Lora", serif; /* Correct font family name */
+    color: var(--text-clr);
+    font-size: 2rem;
+    transition: all 0.5s linear; /* Correct 'transform' to 'transition' */
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    min-width: 10rem;
+    max-width: 30rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    transition: all 0.3s linear;
+  }
+  
+  .container {
+    max-width: 140rem;
+    margin: 0 auto; /* Center the container */
+    padding: 3rem;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 3rem;
+  }
+  
+  .grid-4-col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .card {
+    width: 30rem; /* Adjusted width for consistency */
+    max-width: 100%; /* Ensure responsiveness */
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Remove duplicate margin property in .search-section */
+  .search-section {
+    margin: 4rem 0;
+    text-align: center;
+  }
+  
+  input {
+    width: 30rem;
+    border-radius: 100px;
+    border: 1px solid var(--border-clr);
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.6);
+    outline: none;
+    margin-top: 2rem;
+  }
+  
+  .card-error p {
+    color: red;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+  }
+  
+  /* Single movie CSS */
+  
+  .movie-section {
+    width: 100%;
+    min-height: 100vh; /* Corrected property name and value */
+    background-color: var(--text-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loading {
+    font-size: 3.2rem;
+    color: var(--text-clr);
+    text-align: center;
+  }
+  
+  .movie-card {
+    width: 50vw; /* Adjusted width for responsiveness */
+    background-color: var(--bg-clr);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 60% 40%; /* Adjusted column percentages */
+    box-shadow: 0 2px 8px rgba(99, 99, 99, 0.2);
+    border-radius: 2rem;
+  }
+  
+  /* Remove duplicate 'border-radius' property */
+  .movie-card img {
+    width: 100%;
+    height: auto; /* Removed fixed height and radius properties */
+    border-bottom-left-radius: 2rem;
+  }
+  
+  .movie-card .title {
+    font-size: 2.8rem;
+    color: var(--text-clr);
+    font-weight: bold;
+  }
+  
+  .card-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .card-text {
+    font-size: 1.8rem;
+  }
+  
+  a {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 3.2rem 1rem;
+    color: var(--text-clr);
+    border: 0.2rem solid var(--text-clr);
+    font-size: 1.8rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s linear;
+  }
+  
+  a:hover {
+    background-color: var(--text-clr);
+    color: var(--bg-clr);
+  }
+  
+  a:hover h2 {
+    color: var(--bg-clr);
+    transform: translateY(-1.5rem);
+    display: inline-block;
+  }
+  
+  a:hover img {
+    transform: scale(1.1);
+  }
+  
+  .back-btn {
+    padding: 1.2rem 3.6rem;
+    margin-bottom: 3rem;
+  }
+  
+  /* Responsive code */
+  
+  @media (max-width: 1200px) {
+    .container {
+      max-width: 110rem;
+    }
+    .grid-4-col {
+      grid-template-columns: repeat(3, 1fr); /* Adjusted to 3 columns for better responsiveness */
+    }
+  }
+  
+  @media (max-width: 998px) {
+    .container {
+      max-width: 90rem;
+    }
+    .grid-4-col {
+      grid-template-columns: repeat(2, 1fr); /* Adjusted to 2 columns for better responsiveness */
+    }
+    input {
+      width: 25rem;
+    }
+  
+    .movie-section {
+      padding: 4.8rem 0;
+    }
+    .movie-card {
+      grid-template-columns: 1fr;
+    }
+    .card-content {
+      padding-left: 2rem;
+    }
+    .back-btn {
+      margin-bottom: 3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      max-width: 70rem;
+    }
+    .grid-4-col {
+      grid-template-columns: 1fr;
+    }
+  }
+  
